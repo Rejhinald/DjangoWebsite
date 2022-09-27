@@ -18,16 +18,26 @@
   <div class="container">
       <div class="row">
           <div class="col-sm-6 col-12">
+              <div class="form-row" col-md-8>
+                <div class="form-group col-md-4 mb-0  align=center">
+          <form ALIGN='center'>
               <form method="post">
-                  {% csrf_token %}
 
+                  {% csrf_token %}
+                    <table>
+                    <tr colspan=2>
                   {% for foo in form %}
                         {{ foo.errors }}
                         {{ foo }}
+                      {{ forms.as_table }}
                   {% endfor %}
-
+                    </table>
+                    </tr>
                   <button type="submit" class="btn btn-primary">Submit</button>
               </form>
+          </form>
           </div>
+      </div>
+  </div>
       </div>
   </div>
